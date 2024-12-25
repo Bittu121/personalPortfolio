@@ -44,7 +44,7 @@ const Footer = () => {
           </span>{" "}
           &copy;{" "}
           <span className="text-gray-600">
-            Your Company. All rights reserved.
+            Your Company.  All rights reserved.
           </span>
         </p>
       </div>
