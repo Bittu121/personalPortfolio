@@ -2,22 +2,36 @@ import React from "react";
 import BuddyApp from "../images/BuddyApp.png";
 import CrudApp from "../images/CrudApp.png";
 import AlgoVisualizerApp from "../images/AlgorithmVisulizerApp.png";
+import QEats from "../images/QEats.png";
+import QEatsAdmin from "../images/QEatsAdmin.png";
 function Portfolio() {
   const portfolio = [
     {
       id: 1,
+      src: QEats,
+      demo: "https://fooddeliveryapp-frontend-zn5z.onrender.com",
+      code: "https://github.com/Bittu121/FoodDeliveryApp/tree/main/client",
+    },
+    {
+      id: 2,
+      src: QEatsAdmin,
+      demo: "https://fooddeliveryapp-admin-fm6s.onrender.com",
+      code: "https://github.com/Bittu121/FoodDeliveryApp/tree/main/admin",
+    },
+    {
+      id: 3,
       src: AlgoVisualizerApp,
       demo: "https://lively-gnome-7de8ae.netlify.app",
       code: "https://github.com/Bittu121/AlgorithmVisualizer",
     },
     {
-      id: 2,
+      id: 4,
       src: CrudApp,
       demo: "https://crudapreeminent-daifuku-f68aa4.netlify.app",
       code: "https://github.com/Bittu121/client/tree/main/src/components",
     },
     {
-      id: 2,
+      id: 5,
       src: BuddyApp,
       demo: "https://silly-scone-9e187b.netlify.app",
       code: "https://github.com/Bittu121/Buddy-App",
