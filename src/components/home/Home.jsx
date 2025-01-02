@@ -76,7 +76,7 @@ function Home() {
             </style>
           </Link>
         </div>
-        <div className="md:w-1/2 sm:mt-8">
+        <div className="md:w-1/2" style={{ marginTop: "6rem" }}>
           <img
             src={profileImage}
             alt="my-picture"
