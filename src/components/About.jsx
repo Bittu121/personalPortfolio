@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 const CAPABILITIES = [
@@ -25,12 +24,36 @@ const CAPABILITIES = [
   },
 ];
 
-export default function About() {
+// Styles — change a style here, it updates everywhere it's used
+const cls = {
+  section: "relative overflow-hidden bg-[#0a0a14] py-16 md:py-24 px-4 md:px-8",
+  container: "max-w-6xl mx-auto relative",
+  heading:
+    "text-3xl md:text-5xl font-extrabold text-white tracking-[-0.03em] leading-[1.1] mb-5",
+  subText: "text-base text-white/45 max-w-[520px] leading-[1.8]",
+  cardList: "flex flex-col gap-1 mb-14",
+  cardBase: "card flex items-start gap-4 md:gap-7 px-4 py-5 md:px-8 md:py-7",
+  cardTitle: "text-[20px] font-bold text-white tracking-[-0.02em]",
+  cardStack:
+    "text-xs font-medium text-[#c7d2fe] bg-[#6366f1]/10 border border-[#6366f1]/20 rounded-md px-2.5 py-1",
+  cardDesc: "text-sm text-white/45 leading-[1.8] max-w-[520px]",
+  strip:
+    "flex items-center gap-5 flex-wrap px-5 py-5 md:px-8 md:py-7 rounded-2xl bg-[#6366f1]/[0.05] border border-[#6366f1]/15",
+  stripName: "text-white font-bold text-lg mb-1",
+  stripRole: "text-[#c7d2fe] text-sm font-medium mb-2",
+  stripDesc: "text-sm text-white/45 leading-[1.7] max-w-[650px]",
+  btnIn:
+    "px-4 py-3 rounded-md border border-[#7c83ff] bg-white text-black font-semibold text-sm flex items-center gap-2 transition-all duration-300 hover:opacity-90",
+  btnResume:
+    "px-4 py-3 rounded-md border border-white/10 bg-[#0b0b14] text-white font-semibold text-sm flex items-center gap-2 transition-all duration-300 hover:border-white/20",
+};
+
+function About() {
   return (
-    <section
-      id="about"
-      className="bg-[#0a0a14] py-16 md:py-24 px-4 md:px-8 relative overflow-hidden"
-    >
+    <section id="about" className={cls.section}>
+      {/* Grid Background */}
+      <div className="absolute inset-0 pointer-events-none line-grid" />
+
       {/* Ambient Glow */}
       <div
         className="orb bottom-[-10%] right-[-5%] w-[500px] h-[500px]"
@@ -40,7 +63,7 @@ export default function About() {
         }}
       />
 
-      <div className="max-w-6xl mx-auto relative">
+      <div className={cls.container}>
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,11 +74,11 @@ export default function About() {
         >
           <p className="section-eyebrow mb-4">What I bring to your team</p>
 
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-[-0.03em] leading-[1.1] mb-5">
+          <h2 className={cls.heading}>
             Full-stack developer building scalable web apps.
           </h2>
 
-          <p className="text-base text-white/45 max-w-[520px] leading-[1.8]">
+          <p className={cls.subText}>
             I build scalable MERN applications with clean UI, REST APIs,
             responsive frontend architecture, and production-ready backend
             systems. Currently working as a{" "}
@@ -71,7 +94,7 @@ export default function About() {
         </motion.div>
 
         {/* Capability Cards */}
-        <div className="flex flex-col gap-1 mb-14">
+        <div className={cls.cardList}>
           {CAPABILITIES.map(({ number, title, stack, desc, accent }, i) => (
             <motion.div
               key={number}
@@ -79,7 +102,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="card flex items-start gap-4 md:gap-7 px-4 py-5 md:px-8 md:py-7"
+              className={cls.cardBase}
               style={{
                 borderRadius:
                   i === 0
@@ -105,18 +128,10 @@ export default function About() {
               {/* Content */}
               <div className="flex-1">
                 <div className="flex items-center gap-3 flex-wrap mb-2.5">
-                  <h3 className="text-[20px] font-bold text-white tracking-[-0.02em]">
-                    {title}
-                  </h3>
-
-                  <span className="text-xs font-medium text-[#c7d2fe] bg-[#6366f1]/10 border border-[#6366f1]/20 rounded-md px-2.5 py-1">
-                    {stack}
-                  </span>
+                  <h3 className={cls.cardTitle}>{title}</h3>
+                  <span className={cls.cardStack}>{stack}</span>
                 </div>
-
-                <p className="text-sm text-white/45 leading-[1.8] max-w-[520px]">
-                  {desc}
-                </p>
+                <p className={cls.cardDesc}>{desc}</p>
               </div>
             </motion.div>
           ))}
@@ -128,41 +143,31 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex items-center gap-5 flex-wrap px-5 py-5 md:px-8 md:py-7 rounded-2xl bg-[#6366f1]/[0.05] border border-[#6366f1]/15"
+          className={cls.strip}
         >
-          {/* Divider */}
           <div className="w-px h-12 bg-[#6366f1]/20 flex-shrink-0" />
 
-          {/* Text */}
           <div className="flex-1 min-w-[240px]">
-            <h3 className="text-white font-bold text-lg mb-1">Bittu Kumar</h3>
-
-            <p className="text-[#c7d2fe] text-sm font-medium mb-2">
+            <h3 className={cls.stripName}>Bittu Kumar</h3>
+            <p className={cls.stripRole}>
               MERN Stack Developer · Open to Full-Time Roles
             </p>
-
-            <p className="text-sm text-white/45 leading-[1.7] max-w-[650px]">
+            <p className={cls.stripDesc}>
               Built real-world applications across dashboards, CRUD systems,
               food delivery platforms, and scalable MERN stack projects.
             </p>
           </div>
 
-          {/* Buttons */}
           <div className="flex gap-3 flex-wrap">
             <a
               href="https://www.linkedin.com/in/bittu-kumar143/"
               target="_blank"
               rel="noreferrer"
-              className="px-4 py-3 rounded-md border border-[#7c83ff] bg-white text-black font-semibold text-sm flex items-center gap-2 transition-all duration-300 hover:opacity-90"
+              className={cls.btnIn}
             >
               LinkedIn ↗
             </a>
-
-            <a
-              href="/Resume.pdf"
-              download
-              className="px-4 py-3 rounded-md border border-white/10 bg-[#0b0b14] text-white font-semibold text-sm flex items-center gap-2 transition-all duration-300 hover:border-white/20"
-            >
+            <a href="/Resume.pdf" download className={cls.btnResume}>
               Resume
             </a>
           </div>
@@ -171,3 +176,5 @@ export default function About() {
     </section>
   );
 }
+
+export default About;

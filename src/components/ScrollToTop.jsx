@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const ScrollToTop = () => {
+// Styles
+const cls = {
+  btn: "fixed bottom-6 right-6 z-50 w-12 h-12 flex items-center justify-center rounded-full bg-white/5 backdrop-blur border border-white/10 hover:bg-white/10 transition group",
+};
+
+function ScrollToTop() {
   const [show, setShow] = useState(false);
   const [progress, setProgress] = useState(0);
 
@@ -11,7 +16,6 @@ const ScrollToTop = () => {
       const height =
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
-
       setProgress(scrollTop / height);
       setShow(scrollTop > 300);
     };
@@ -30,9 +34,9 @@ const ScrollToTop = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-6 right-6 z-50 w-12 h-12 flex items-center justify-center rounded-full bg-white/5 backdrop-blur border border-white/10 hover:bg-white/10 transition group"
+      className={cls.btn}
     >
-      {/* Progress Ring */}
+      {/* Circular progress ring */}
       <svg className="absolute w-12 h-12 rotate-[-90deg]">
         <circle
           cx="24"
@@ -55,7 +59,7 @@ const ScrollToTop = () => {
         />
       </svg>
 
-      {/* Arrow */}
+      {/* Up arrow */}
       <svg
         className="w-4 h-4 text-white/70 group-hover:text-white transition"
         fill="none"
@@ -71,6 +75,6 @@ const ScrollToTop = () => {
       </svg>
     </motion.button>
   );
-};
+}
 
 export default ScrollToTop;

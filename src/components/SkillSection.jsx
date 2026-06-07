@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import {
   SiReact,
@@ -110,44 +109,43 @@ const TOTAL_SKILLS = SKILL_CATEGORIES.reduce(
   0,
 );
 
-const SkillCard = ({ icon: Icon, name, accent, note }) => (
-  <motion.div
-    whileHover={{ scale: 1.04 }}
-    className="
-      border border-white/10 bg-white/[0.03]
-      p-5 rounded-xl
-      hover:border-indigo-400/40
-      hover:bg-white/[0.06]
-      transition cursor-default
-    "
-  >
-    <Icon className="text-2xl mb-3" style={{ color: accent }} />
+// Styles
+const cls = {
+  section: "relative overflow-hidden bg-[#0a0a14] py-24 px-4 md:px-8",
+  container: "max-w-6xl mx-auto relative",
+  heading:
+    "text-3xl md:text-5xl font-extrabold text-white tracking-[-0.03em] leading-[1.1]",
+  countBadge:
+    "text-xs font-semibold text-white/20 bg-white/[0.04] border border-white/[0.07] rounded-lg px-3.5 py-1.5",
+  catLabel:
+    "text-sm font-semibold text-white/40 uppercase tracking-widest mb-4",
+  skillCard:
+    "border border-white/10 bg-white/[0.03] p-5 rounded-xl hover:border-indigo-400/40 hover:bg-white/[0.06] transition cursor-default",
+  skillName: "text-white font-medium text-sm",
+  skillNote: "text-white/50 text-xs mt-2 leading-relaxed",
+  strip:
+    "mt-12 px-7 py-5 rounded-[14px] flex items-center justify-between flex-wrap gap-4 bg-[rgba(99,102,241,0.05)] border border-[rgba(99,102,241,0.15)]",
+  stripDot: "w-[7px] h-[7px] rounded-full",
+  stripText: "text-[13px] font-semibold text-white/50",
+};
 
-    <h3 className="text-white font-medium text-sm">{name}</h3>
-
-    <p className="text-white/50 text-xs mt-2 leading-relaxed">{note}</p>
-  </motion.div>
-);
-
-export default function SkillSection() {
+function SkillCard({ icon: Icon, name, accent, note }) {
   return (
-    <section
-      id="skill"
-      className="bg-[#0a0a14] py-24 px-4 md:px-8 relative overflow-hidden"
-    >
-      {/* Grid Background */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)
-          `,
-          backgroundSize: "80px 80px",
-        }}
-      />
+    <motion.div whileHover={{ scale: 1.04 }} className={cls.skillCard}>
+      <Icon className="text-2xl mb-3" style={{ color: accent }} />
+      <h3 className={cls.skillName}>{name}</h3>
+      <p className={cls.skillNote}>{note}</p>
+    </motion.div>
+  );
+}
 
-      <div className="max-w-6xl mx-auto relative">
+function SkillSection() {
+  return (
+    <section id="skill" className={cls.section}>
+      {/* Grid Background */}
+      <div className="absolute inset-0 pointer-events-none line-grid" />
+
+      <div className={cls.container}>
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -158,22 +156,9 @@ export default function SkillSection() {
         >
           <div>
             <p className="section-eyebrow mb-3">Tech stack</p>
-
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-[-0.03em] leading-[1.1] m-0">
-              Skills & Technologies
-            </h2>
+            <h2 className={cls.heading}>Skills & Technologies</h2>
           </div>
-
-          <span
-            className="
-              text-xs font-semibold text-white/20
-              bg-white/[0.04]
-              border border-white/[0.07]
-              rounded-lg px-3.5 py-1.5
-            "
-          >
-            {TOTAL_SKILLS} skills
-          </span>
+          <span className={cls.countBadge}>{TOTAL_SKILLS} skills</span>
         </motion.div>
 
         {/* Skill Categories */}
@@ -186,10 +171,7 @@ export default function SkillSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
             >
-              <h3 className="text-sm font-semibold text-white/40 uppercase tracking-widest mb-4">
-                {category.title}
-              </h3>
-
+              <h3 className={cls.catLabel}>{category.title}</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {category.skills.map((skill, idx) => (
                   <SkillCard key={idx} {...skill} />
@@ -205,16 +187,13 @@ export default function SkillSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="
-            mt-12 px-7 py-5 rounded-[14px]
-            flex items-center justify-between flex-wrap gap-4
-            bg-[rgba(99,102,241,0.05)]
-            border border-[rgba(99,102,241,0.15)]
-          "
+          className={cls.strip}
         >
           <div className="flex items-center gap-2.5">
-            <div className="w-[7px] h-[7px] rounded-full bg-[#818cf8] shadow-[0_0_6px_#818cf8]" />
-            <span className="text-[13px] font-semibold text-white/50">
+            <div
+              className={`${cls.stripDot} bg-[#818cf8] shadow-[0_0_6px_#818cf8]`}
+            />
+            <span className={cls.stripText}>
               Focused on building —{" "}
               <span className="text-[#e2e8f0]">
                 Scalable MERN stack applications
@@ -223,9 +202,10 @@ export default function SkillSection() {
           </div>
 
           <div className="flex items-center gap-2.5">
-            <div className="w-[7px] h-[7px] rounded-full bg-[#22c55e] shadow-[0_0_6px_#22c55e]" />
-
-            <span className="text-[13px] font-semibold text-white/50">
+            <div
+              className={`${cls.stripDot} bg-[#22c55e] shadow-[0_0_6px_#22c55e]`}
+            />
+            <span className={cls.stripText}>
               Currently looking for —{" "}
               <span className="text-[#e2e8f0]">
                 SDE-1 / Full-Stack Developer roles in India
@@ -237,3 +217,5 @@ export default function SkillSection() {
     </section>
   );
 }
+
+export default SkillSection;

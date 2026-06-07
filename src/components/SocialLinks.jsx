@@ -1,4 +1,3 @@
-import React from "react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
@@ -34,7 +33,7 @@ const LINKS = [
   },
 ];
 
-export default function SocialLinks() {
+function SocialLinks() {
   return (
     <motion.div
       initial={{ opacity: 0, x: -40 }}
@@ -62,3 +61,5 @@ export default function SocialLinks() {
     </motion.div>
   );
 }
+
+export default SocialLinks;

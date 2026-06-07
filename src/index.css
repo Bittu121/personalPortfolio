@@ -8,11 +8,14 @@
    BASE
 ───────────────────────────────────────────── */
 @layer base {
-  *, *::before, *::after { box-sizing: border-box; }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
   html {
     font-family: "Inter", sans-serif;
-    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -32,33 +35,26 @@
    DESIGN TOKENS
 ───────────────────────────────────────────── */
 :root {
-  --bg-base:       #05050a;
-  --bg-surface:    #0d0d16;
-  --bg-elevated:   #131321;
-  --accent:        #6366f1;
-  --accent-hover:  #5254e8;
-  --accent-muted:  rgba(99, 102, 241, 0.12);
+  --bg-base: #05050a;
+  --bg-surface: #0d0d16;
+  --bg-elevated: #131321;
+  --accent: #6366f1;
+  --accent-hover: #5254e8;
+  --accent-muted: rgba(99, 102, 241, 0.12);
   --accent-border: rgba(99, 102, 241, 0.25);
-  --border:        rgba(255, 255, 255, 0.07);
-  --border-hover:  rgba(255, 255, 255, 0.14);
-  --text-1:        #ffffff;
-  --text-2:        #8b9cb5;
-  --text-3:        #4a5568;
-  --radius-sm:     10px;
-  --radius-md:     14px;
-  --radius-lg:     20px;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-hover: rgba(255, 255, 255, 0.14);
+  --text-1: #ffffff;
+  --text-2: #8b9cb5;
+  --text-3: #4a5568;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
 }
 
 /* ─────────────────────────────────────────────
-   TYPOGRAPHY UTILITIES
+   SECTION EYEBROW
 ───────────────────────────────────────────── */
-.text-gradient {
-  background: linear-gradient(135deg, #818cf8 0%, #6366f1 40%, #a78bfa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 .section-eyebrow {
   font-size: 11px;
   font-weight: 700;
@@ -81,13 +77,15 @@
 }
 
 /* ─────────────────────────────────────────────
-   CARD SYSTEM
+   CARD
 ───────────────────────────────────────────── */
 .card {
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  transition: border-color 0.2s ease, background 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
 }
 
 .card:hover {
@@ -95,13 +93,8 @@
   background: var(--bg-elevated);
 }
 
-.card-accent:hover {
-  border-color: var(--accent-border);
-  background: var(--accent-muted);
-}
-
 /* ─────────────────────────────────────────────
-   BUTTON SYSTEM
+   BUTTON
 ───────────────────────────────────────────── */
 .btn-primary {
   display: inline-flex;
@@ -115,7 +108,10 @@
   border-radius: var(--radius-md);
   border: none;
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s,
+    transform 0.15s;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -124,80 +120,6 @@
   background: var(--accent-hover);
   box-shadow: 0 0 32px rgba(99, 102, 241, 0.45);
   transform: translateY(-1px);
-}
-
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text-1);
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  cursor: pointer;
-  transition: background 0.2s, border-color 0.2s, transform 0.15s;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.09);
-  border-color: rgba(255, 255, 255, 0.18);
-  transform: translateY(-1px);
-}
-
-/* ─────────────────────────────────────────────
-   TAGS / BADGES
-───────────────────────────────────────────── */
-.tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 10px;
-  font-size: 11px;
-  font-weight: 600;
-  border-radius: 6px;
-  background: var(--accent-muted);
-  border: 1px solid var(--accent-border);
-  color: #a5b4fc;
-  letter-spacing: 0.02em;
-}
-
-.tag-ghost {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 10px;
-  font-size: 11px;
-  font-weight: 500;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  color: var(--text-2);
-}
-
-/* ─────────────────────────────────────────────
-   ICON BUTTON
-───────────────────────────────────────────── */
-.icon-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--text-2);
-  transition: color 0.2s, background 0.2s, border-color 0.2s;
-  text-decoration: none;
-}
-
-.icon-btn:hover {
-  color: var(--text-1);
-  background: rgba(255, 255, 255, 0.07);
-  border-color: var(--border-hover);
 }
 
 /* ─────────────────────────────────────────────
@@ -215,8 +137,11 @@
   border-left: none;
   color: var(--text-2);
   text-decoration: none;
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-              background 0.2s, color 0.2s, border-color 0.2s;
+  transition:
+    width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
   white-space: nowrap;
 }
 
@@ -240,7 +165,7 @@
 }
 
 /* ─────────────────────────────────────────────
-   AMBIENT ORB UTILITY
+   AMBIENT ORB
 ───────────────────────────────────────────── */
 .orb {
   position: absolute;
@@ -253,35 +178,23 @@
    BACKGROUND PATTERNS
 ───────────────────────────────────────────── */
 .dot-grid {
-  background-image: radial-gradient(rgba(99, 102, 241, 0.18) 1px, transparent 1px);
+  background-image: radial-gradient(
+    rgba(99, 102, 241, 0.18) 1px,
+    transparent 1px
+  );
   background-size: 30px 30px;
 }
 
+.line-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
 /* ─────────────────────────────────────────────
-   INPUT SYSTEM
+   FORM LABEL
 ───────────────────────────────────────────── */
-.form-input {
-  width: 100%;
-  padding: 12px 16px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-md);
-  color: var(--text-1);
-  font-size: 14px;
-  font-family: "Inter", sans-serif;
-  outline: none;
-  transition: border-color 0.2s, background 0.2s;
-}
-
-.form-input::placeholder {
-  color: var(--text-3);
-}
-
-.form-input:focus {
-  border-color: rgba(99, 102, 241, 0.5);
-  background: rgba(255, 255, 255, 0.065);
-}
-
 .form-label {
   display: block;
   font-size: 11px;
@@ -290,74 +203,4 @@
   text-transform: uppercase;
   color: var(--text-3);
   margin-bottom: 6px;
-}
-
-/* ─────────────────────────────────────────────
-   DIVIDER
-───────────────────────────────────────────── */
-.divider {
-  width: 100%;
-  height: 1px;
-  background: var(--border);
-}
-
-/* ─────────────────────────────────────────────
-   SKILL ROW — Experience section
-   Uses --c CSS var (hex color) set per-row via style={{}}
-───────────────────────────────────────────── */
-.skill-row {
-  border-left: 3px solid transparent;
-  transition: border-left-color 0.2s ease, background 0.2s ease;
-}
-.skill-row:hover { border-left-color: var(--c); background: rgba(255,255,255,0.018); }
-
-.skill-num { color: rgba(255,255,255,0.10); transition: color 0.2s ease; }
-.skill-row:hover .skill-num { color: var(--c); }
-
-.skill-name { color: rgba(255,255,255,0.72); transition: color 0.2s ease; }
-.skill-row:hover .skill-name { color: #fff; }
-
-.skill-note { color: rgba(255,255,255,0.18); transition: color 0.2s ease; }
-.skill-row:hover .skill-note { color: rgba(255,255,255,0.4); }
-
-.skill-badge {
-  color: var(--c);
-  background: color-mix(in srgb, var(--c) 9%, transparent);
-  border: 1px solid color-mix(in srgb, var(--c) 19%, transparent);
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-.skill-row:hover .skill-badge {
-  background: color-mix(in srgb, var(--c) 16%, transparent);
-  border-color: color-mix(in srgb, var(--c) 34%, transparent);
-}
-.skill-badge-dot { background: var(--c); }
-
-/* ─────────────────────────────────────────────
-   PROJECT CARD — Portfolio section
-   Uses --c CSS var (hex color) set per-card via style={{}}
-───────────────────────────────────────────── */
-.proj-card {
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-}
-.proj-card:hover {
-  border-color: color-mix(in srgb, var(--c) 27%, transparent);
-  box-shadow: 0 16px 32px rgba(0,0,0,0.35);
-  transform: translateY(-2px);
-}
-.proj-badge {
-  color: var(--c);
-  background: color-mix(in srgb, var(--c) 13%, transparent);
-  border: 1.5px solid color-mix(in srgb, var(--c) 33%, transparent);
-}
-.proj-badge-dot { background: var(--c); }
-.proj-bullet-dot { background: var(--c); }
-
-/* ─────────────────────────────────────────────
-   CAPABILITY BADGE — About section
-   Uses --c CSS var (hex color) set per-row via style={{}}
-───────────────────────────────────────────── */
-.cap-badge {
-  background: color-mix(in srgb, var(--c) 8%, transparent);
-  border: 1px solid color-mix(in srgb, var(--c) 20%, transparent);
-  color: var(--c);
 }
