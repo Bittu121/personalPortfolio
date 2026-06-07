@@ -2,6 +2,7 @@ import { useState } from "react";
 import { HiExternalLink } from "react-icons/hi";
 import { FaGithub } from "react-icons/fa";
 import { TbSitemap } from "react-icons/tb";
+import { HiDownload } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
 
 // import travelDeskFlow   from "../images/traveldesk-flow.png";
@@ -10,6 +11,8 @@ import { motion, AnimatePresence } from "framer-motion";
 // import assetFlow        from "../images/asset-flow.png";
 // import assetER          from "../images/asset-er.png";
 // import assetSchema      from "../images/asset-schema.png";
+
+import travelDeskFlow from "../images/QEatsAdmin.png";
 
 const PROJECTS = [
   {
@@ -98,7 +101,7 @@ const PROJECTS = [
     demo: "https://...",
     code: "https://...",
     architecture: {
-      // flow: travelDeskFlow, // or null until ready
+      flow: travelDeskFlow, // or null until ready
       // er: travelDeskER,
       // schema: travelDeskSchema,
     },
@@ -153,7 +156,17 @@ const cls = {
     "px-4 py-2 rounded-lg text-sm font-semibold bg-[#7c83ff]/15 border border-[#7c83ff]/40 text-[#a5b4fc] transition",
   tabIdle:
     "px-4 py-2 rounded-lg text-sm font-semibold bg-white/[0.03] border border-white/10 text-white/55 hover:text-white hover:border-white/20 transition",
+  // Download button — shown when the active tab has an image
+  btnDownload:
+    "inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold bg-white text-black transition hover:opacity-90 whitespace-nowrap",
 };
+
+// Turn "Travel Desk Management System" + "flow" → "travel-desk-management-system-flow"
+const fileNameFor = (title, tab) =>
+  `${title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")}-${tab}`;
 
 function ProjectCard({ project, onViewFeatures, onViewArchitecture, index }) {
   const { id, badge, badgeBg, title, desc, tech, demo, code, architecture } =
@@ -282,7 +295,7 @@ function Project() {
         </div>
       </div>
 
-      {/* ── Features modal ── */}
+      {/* Features modal*/}
       <AnimatePresence>
         {featuresOf && (
           <motion.div
@@ -360,17 +373,32 @@ function Project() {
                 {archOf.title}
               </h3>
 
-              {/* Tabs */}
-              <div className="flex gap-2 mb-5 flex-wrap">
-                {DIAGRAM_TABS.map(({ key, label }) => (
-                  <button
-                    key={key}
-                    onClick={() => setActiveTab(key)}
-                    className={activeTab === key ? cls.tabActive : cls.tabIdle}
+              {/* Tabs + download */}
+              <div className="flex items-center justify-between gap-3 mb-5 flex-wrap">
+                <div className="flex gap-2 flex-wrap">
+                  {DIAGRAM_TABS.map(({ key, label }) => (
+                    <button
+                      key={key}
+                      onClick={() => setActiveTab(key)}
+                      className={
+                        activeTab === key ? cls.tabActive : cls.tabIdle
+                      }
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Download — only when the current tab has a diagram */}
+                {activeImage && (
+                  <a
+                    href={activeImage}
+                    download={fileNameFor(archOf.title, activeTab)}
+                    className={cls.btnDownload}
                   >
-                    {label}
-                  </button>
-                ))}
+                    <HiDownload size={16} /> Download
+                  </a>
+                )}
               </div>
 
               {/* Diagram area */}
@@ -406,7 +434,8 @@ function Project() {
 
               {activeImage && (
                 <p className="text-white/30 text-xs mt-3 text-center">
-                  Click the diagram to open it full size.
+                  Click the diagram to open it full size, or use Download to
+                  save it.
                 </p>
               )}
             </motion.div>
