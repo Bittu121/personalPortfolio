@@ -1,4 +1,4 @@
-import profileImage from "../images/profile.png";
+import profileImage from "../images/profile.jpeg";
 import { Link } from "react-scroll";
 import { HiArrowRight } from "react-icons/hi";
 import { FaReact, FaNodeJs, FaJsSquare } from "react-icons/fa";
