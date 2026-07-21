@@ -17,11 +17,14 @@
   html {
     font-family: "Inter", sans-serif;
     -webkit-font-smoothing: antialiased;
+    /* Always reserve the scrollbar gutter so opening a modal (which locks
+       scroll) never widens the viewport and shifts fixed elements / content */
+    scrollbar-gutter: stable;
   }
 
   body {
-    background-color: #05050a;
-    color: #e2e8f0;
+    background-color: rgb(var(--c-page));
+    color: rgb(var(--c-content));
     line-height: 1.6;
   }
 
@@ -32,175 +35,57 @@
 }
 
 /* ─────────────────────────────────────────────
-   DESIGN TOKENS
+   THEME TOKENS — dark is the default, `html.light` flips them.
+   Also consumed directly by Navbar / ContactUs via var(--nav-bg) etc.
 ───────────────────────────────────────────── */
 :root {
-  --bg-base: #05050a;
-  --bg-surface: #0d0d16;
-  --bg-elevated: #131321;
-  --accent: #6366f1;
-  --accent-hover: #5254e8;
-  --accent-muted: rgba(99, 102, 241, 0.12);
-  --accent-border: rgba(99, 102, 241, 0.25);
-  --border: rgba(255, 255, 255, 0.07);
-  --border-hover: rgba(255, 255, 255, 0.14);
-  --text-1: #ffffff;
-  --text-2: #8b9cb5;
-  --text-3: #4a5568;
-  --radius-sm: 10px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
+  --c-page: 8 8 16; /* #080810 */
+  --c-card: 13 13 22; /* #0d0d16 */
+  --c-content: 255 255 255; /* white text */
+  --c-invert: 255 255 255; /* solid button background */
+  --c-invert-fg: 0 0 0; /* solid button text */
+
+  --nav-bg: rgba(5, 5, 10, 0.9);
+  --nav-solid: rgba(5, 5, 10, 0.98);
+  --contact-card: #0f0f1e;
+}
+
+html.light {
+  color-scheme: light;
+
+  --c-page: 245 246 251; /* #f5f6fb */
+  --c-card: 255 255 255;
+  --c-content: 15 23 42; /* slate-900 */
+  --c-invert: 79 70 229; /* indigo-600 */
+  --c-invert-fg: 255 255 255;
+
+  --nav-bg: rgba(255, 255, 255, 0.82);
+  --nav-solid: rgba(255, 255, 255, 0.97);
+  --contact-card: #eef0fb;
 }
 
 /* ─────────────────────────────────────────────
-   SECTION EYEBROW
+   THIN SCROLLBAR
 ───────────────────────────────────────────── */
-.section-eyebrow {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.thin-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(129, 140, 248, 0.35) transparent;
 }
 
-.section-eyebrow::before {
-  content: "";
-  display: block;
-  width: 20px;
-  height: 2px;
-  background: var(--accent);
-  border-radius: 2px;
-  flex-shrink: 0;
+.thin-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
 
-/* ─────────────────────────────────────────────
-   CARD
-───────────────────────────────────────────── */
-.card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  transition:
-    border-color 0.2s ease,
-    background 0.2s ease;
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-.card:hover {
-  border-color: var(--border-hover);
-  background: var(--bg-elevated);
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(129, 140, 248, 0.35);
+  border-radius: 9999px;
 }
 
-/* ─────────────────────────────────────────────
-   BUTTON
-───────────────────────────────────────────── */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  background: var(--accent);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: var(--radius-md);
-  border: none;
-  cursor: pointer;
-  transition:
-    background 0.2s,
-    box-shadow 0.2s,
-    transform 0.15s;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.btn-primary:hover {
-  background: var(--accent-hover);
-  box-shadow: 0 0 32px rgba(99, 102, 241, 0.45);
-  transform: translateY(-1px);
-}
-
-/* ─────────────────────────────────────────────
-   SOCIAL SIDEBAR
-───────────────────────────────────────────── */
-.social-item {
-  display: flex;
-  align-items: center;
-  height: 44px;
-  width: 44px;
-  padding: 0 12px;
-  overflow: hidden;
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-left: none;
-  color: var(--text-2);
-  text-decoration: none;
-  transition:
-    width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  white-space: nowrap;
-}
-
-.social-item:hover {
-  width: 152px;
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-}
-
-.social-item-label {
-  font-size: 13px;
-  font-weight: 600;
-  opacity: 0;
-  margin-left: 10px;
-  transition: opacity 0.2s;
-}
-
-.social-item:hover .social-item-label {
-  opacity: 1;
-}
-
-/* ─────────────────────────────────────────────
-   AMBIENT ORB
-───────────────────────────────────────────── */
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  filter: blur(60px);
-}
-
-/* ─────────────────────────────────────────────
-   BACKGROUND PATTERNS
-───────────────────────────────────────────── */
-.dot-grid {
-  background-image: radial-gradient(
-    rgba(99, 102, 241, 0.18) 1px,
-    transparent 1px
-  );
-  background-size: 30px 30px;
-}
-
-.line-grid {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
-
-/* ─────────────────────────────────────────────
-   FORM LABEL
-───────────────────────────────────────────── */
-.form-label {
-  display: block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-3);
-  margin-bottom: 6px;
+.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(129, 140, 248, 0.55);
 }
