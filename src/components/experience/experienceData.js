@@ -4,24 +4,46 @@ export const WORK_EXPERIENCE = [
     org: "VServ Infosystems Pvt. Ltd.",
     location: "India",
     duration: "Jan 2025 — Present",
-    points: [
-      "Developed responsive admin dashboards and reusable UI components with React",
-      "Integrated REST APIs and improved frontend data handling and performance",
-      "Focused on reusable architecture, clean code, and production-ready delivery",
+    points: [],
+    tech: [
+      "React",
+      "JavaScript",
+      "Node.js",
+      "REST APIs",
+      "Tailwind CSS",
+      "Git","Java","Spring Boot","MySQL"
     ],
-    tech: ["React", "JavaScript", "REST APIs", "Git"],
   },
   {
     role: "MERN Stack Intern",
     org: "Applore Technologies",
     location: "Remote",
-    duration: "2023 — 2024",
-    points: [
-      "Optimized backend APIs and improved overall application performance",
-      "Built authentication, CRUD operations, and secure REST APIs",
-      "Developed reusable frontend components and dashboard features",
+    duration: "May 2024 — Nov 2024",
+    points: [],
+    tech: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "REST APIs",
+      "Tailwind CSS",
     ],
-    tech: ["React", "Node.js", "MongoDB", "REST APIs"],
+  },
+  {
+    role: "Frontend Developer Intern",
+    org: "Can Technologies",
+    location: "Remote",
+    duration: "Jan 2024 — Apr 2024",
+    points: [],
+    tech: ["React", "JavaScript", "HTML5", "CSS3", "REST APIs"],
+  },
+  {
+    role: "Software Engineer",
+    org: "Share India Securities Ltd.",
+    location: "Remote",
+    duration: "Jul 2022 — Apr 2023",
+    points: [],
+    tech: ["C++", "JavaScript", "HTML5", "CSS3", "Git"],
   },
 ];
 
@@ -30,12 +52,7 @@ export const EDUCATION = [
     role: "B.Tech, Computer Science & Engineering",
     org: "Darbhanga College of Engineering",
     location: "CGPA: 8.5/10",
-    duration: "2017 — 2021",
-    points: [
-      "Built full-stack MERN applications — dashboards, CRUD systems, and REST APIs",
-      "Solved DSA problems across arrays, trees, graphs, and dynamic programming",
-      "Strong foundation in authentication, database design, and scalable backends",
-      "Hands-on with clean UI, responsive layouts, and API integration",
-    ],
+    duration: "Sept 2017 — Nov 2021",
+    points: [""],
   },
 ];

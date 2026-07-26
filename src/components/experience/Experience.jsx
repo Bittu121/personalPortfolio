@@ -18,7 +18,7 @@ const Experience = () => {
           </h2>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-12 md:gap-16">
           <div>
             <p className="font-mono text-xs font-semibold tracking-[0.18em] text-content/35 uppercase mb-8">
               Work Experience
