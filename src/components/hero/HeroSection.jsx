@@ -100,11 +100,9 @@ const HeroSection = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-base md:text-lg leading-[1.75] text-content/50 max-w-lg mb-8 mx-auto md:mx-0"
             >
-              I build scalable, high-performance web applications using MongoDB,
-              Express.js, React, and Node.js.
+              Building full-stack web applications with React, Next.js, Node.js, Express.js, and MongoDB.
               <br />
-              Focused on clean REST APIs, secure authentication, and reliable
-              systems. Hands-on experience at{" "}
+              Focused on reusable UI components, REST APIs, authentication, and business applications.{" "}
               <span className="text-[#a5b4fc] font-semibold underline decoration-[#818cf8]/40 underline-offset-2">
                 Vserv Infosystems Private Limited
               </span>

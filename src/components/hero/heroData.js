@@ -9,9 +9,12 @@ export const HERO_TAGLINES = [
 ];
 
 export const HERO_GIT_LOG = [
-  { hash: "d362a1c", msg: "feat: ship responsive dashboards in React" },
-  { hash: "6c0ed7e", msg: "perf: optimize REST APIs for faster UX" },
-  { hash: "bc685f3", msg: "feat: secure JWT auth + CRUD (MERN stack)" },
+  { hash: "d362a1c", msg: "feat: build reusable UI components" },
+  { hash: "6c0ed7e", msg: "feat: integrate REST APIs across modules" },
+  {
+    hash: "bc685f3",
+    msg: "feat: implement authentication and protected routes",
+  },
 ];
 
 export const HERO_TABS = [
@@ -23,27 +26,27 @@ export const HERO_IMPACT_LOG = [
   { tag: "INFO", text: "loading impact.log ...", color: "text-white/35" },
   {
     tag: "OK",
-    text: "5+ production-grade apps shipped",
+    text: "5+ full-stack projects completed",
     color: "text-emerald-400",
   },
   {
     tag: "OK",
-    text: "1+ year hands-on MERN experience",
+    text: "2+ years of hands-on MERN experience",
     color: "text-emerald-400",
   },
   {
     tag: "OK",
-    text: "7+ technologies in daily use",
+    text: "7+ technologies used across projects",
     color: "text-emerald-400",
   },
   {
     tag: "OK",
-    text: "Clean REST APIs · secure auth · scalable systems",
+    text: "Reusable UI · REST APIs · JWT Authentication",
     color: "text-emerald-400",
   },
   {
-    tag: "READY",
-    text: "open_to_work — full-time SDE / MERN roles",
+    tag: "Ready",
+    text: "Open to SDE / Frontend / Full-Stack Roles",
     color: "text-[#818cf8]",
   },
 ];

@@ -49,6 +49,18 @@ import tdFlowDiagram from "../../images/travel-desk-images/Travel_Desk_Managemen
 import tdErDiagram from "../../images/travel-desk-images/Travel_Desk_ER_Diagram.png";
 import tdSchemaDiagram from "../../images/travel-desk-images/Travel_Desk_Schema-Diagram.png";
 
+//Q Eats Food Delivery Platform
+import qeLandingPage from "../../images/QEatsReadmeImage/landingPage.png";
+import qeHomeMenu from "../../images/QEatsReadmeImage/homeMenu.png";
+import qeFoodList from "../../images/QEatsReadmeImage/foodlist.png";
+import qeCart from "../../images/QEatsReadmeImage/Cart.png";
+import qeCheckout from "../../images/QEatsReadmeImage/checkout.png";
+import qeLandingFeatures from "../../images/QEatsReadmeImage/landingpageProjectFeature.png";
+import qeAdminPanel from "../../images/QEatsReadmeImage/QEatsAdminPanel.png";
+import qeFlowDiagram from "../../images/QEatsReadmeImage/Flow_Diagram.webp";
+import qeErDiagram from "../../images/QEatsReadmeImage/ER_Diagram.webp";
+import qeSchemaDiagram from "../../images/QEatsReadmeImage/SchemaDiagram.webp";
+
 export const TECH_ICONS = {
   React: { icon: SiReact, color: "#61DAFB" },
   "Next.js": { icon: SiNextdotjs, color: "#FFFFFF" },
@@ -74,6 +86,7 @@ export const PROJECTS = [
       "Express.js",
       "MongoDB",
       "REST API",
+      "Redux Thunk"
     ],
     features: [
       { icon: FiShield, label: "Role Based Access" },
@@ -82,24 +95,33 @@ export const PROJECTS = [
       { icon: FiBarChart2, label: "Advanced Reporting" },
     ],
     bullets: [
-      "First-Time Setup (Automatic) — on first startup, the app auto-creates the 4 roles (Admin, Manager, Technician, User) and one Admin account. If an Admin already exists on restart, nothing is recreated and no data is deleted. The Admin email and password are configurable via environment variables.",
-      "Login & Security — log in using email and password, with passwords stored securely in hashed form. Users stay logged in via a secure httpOnly-cookie auth token, can reset a password via an OTP sent to email, and can securely log out to clear the session.",
-      "Role — create and manage user roles, assign permissions to each role, and assign a role to each user so only permitted roles can perform specific actions (role-based access).",
-      "User Account — create and manage user accounts with name, email, password, employee code, phone number, and job title. Assign a Role and an optional Reporting Manager, plus Department, Sub-Department, Location, and Sub-Location.",
-      "Department — a team in the company, like IT or Finance, with a name and short code. Independent — can be created first among the master data.",
-      'Sub-Department — a smaller team inside a Department (e.g., "Network Support" inside "IT"). Every Sub-Department belongs to one Department.',
-      "Location — a physical place (office or branch) with a name, address, and city.",
-      "Sub-Location — a smaller part inside a Location (e.g., one floor or room). Every Sub-Location belongs to one Location.",
-      "Vendor Management — a vendor is the company that supplied an asset (e.g., the laptop supplier). Stores vendor contact details, GST number, and contract expiry date.",
-      "Asset Category — groups similar assets at the top level (e.g., Computers, Furniture, Printers).",
-      'Sub-Category — groups assets within a Category (e.g., "Laptops" under "Computers").',
-      'Asset Type — defines a specific asset (e.g., "Dell Laptop"). Optionally linked to a Sub-Category.',
-      'Support Group — a small team of users (e.g., an "IT Helpdesk" group). Has one manager, a list of members, and a maximum ticket limit (default 10).',
-      "Asset Registry — manage assets like laptops, desktops, tablets, and other devices, each with a unique Asset Tag and Serial Number. Stores technical (OS, processor, RAM), network (IP address, hostname), and purchase (cost, warranty, AMC) details. A unique QR code is generated for each asset — printable, downloadable, and scannable. Add assets one by one or import in bulk via Excel; export the full list to Excel.",
-      "Asset Allocation — allocate an asset to a user with an expected return date; each allocation links one asset to one user, and the same asset cannot be allocated to two users at once (enforced by the database). An Admin, Manager, or Technician can process a return and record the asset's condition. View full allocation history and track overdue allocations — only an Admin can permanently delete an allocation.",
-      "Gate Pass Management — raise a gate pass request for a specific asset (with a unique Gate Pass ID). Status flow: Pending → Approved → Issued → Returned (or Rejected). Only an Admin or Manager can approve, reject, issue, or mark as returned; a Technician can only raise a request, an End User cannot, and only an Admin can permanently delete a gate pass.",
-      "End User Self-Service View — shows only the logged-in user's own asset information: assigned assets, returned assets, gate passes, and alerts. Read-only for End Users.",
-      "Reports and Dashboard — dashboard shows total assets, allocated, available, total value, and overdue allocations. Reports cover allocation history, asset returns, and gate pass records — filterable and exportable — plus an audit trail of key actions (currently for allocation and gate-pass actions only).",
+      "First-Time Setup – Automatically creates the default roles (Admin, Manager, Technician, and User) and an Admin account on first startup. Initialization is skipped if an Admin account already exists.",
+
+      "Login & Security – Email and password authentication with JWT access and refresh tokens, httpOnly cookies, bcrypt password hashing, OTP-based password reset, and secure logout.",
+
+      "Role Management – Create and manage roles, assign permissions, and assign roles to users.",
+
+      "User Management – Create and manage user accounts, assign roles, reporting managers, departments, sub-departments, locations, and sub-locations.",
+
+      "Department Management – Manage departments and sub-departments.",
+
+      "Location Management – Manage locations and sub-locations.",
+
+      "Vendor Management – Manage vendor details, including contact information, GST number, and contract expiry.",
+
+      "Asset Category Management – Manage asset categories, sub-categories, and asset types.",
+
+      "Support Group Management – Create support groups, assign managers and members, and configure a maximum ticket limit (default: 10).",
+
+      "Asset Management – Register and manage assets, maintain technical, network, and purchase details, generate unique QR codes, and import/export assets using Excel.",
+
+      "Asset Allocation – Allocate assets to users, prevent duplicate active allocations, process asset returns, record asset condition, maintain allocation history, and monitor overdue allocations.",
+
+      "Gate Pass Management – Raise, approve, reject, issue, return, and track gate pass requests for asset movement.",
+
+      "End User Portal – View assigned assets, returned assets, gate passes, and asset-related alerts.",
+
+      "Reports & Dashboard – View asset statistics, allocation history, asset returns, gate pass records, export reports, and audit trails for asset allocation and gate pass activities.",
     ],
     images: [
       amLogin,
@@ -136,6 +158,7 @@ export const PROJECTS = [
       "Express.js",
       "MongoDB",
       "REST API",
+      "Redux.js"
     ],
     features: [
       { icon: FiClipboard, label: "Booking Requests" },
@@ -174,7 +197,7 @@ export const PROJECTS = [
     id: "03",
     badge: "Full-Stack",
     title: "Q Eats — Food Delivery Platform",
-    desc: "A production-grade food ordering system built end-to-end — from a polished React storefront to a Node.js/MongoDB backend with full order management.",
+    desc: "A full-stack food delivery application QEats with a customer-facing client, an admin panel, and a Node.js/Express backend.",
     tech: ["React", "Node.js", "MongoDB", "Express.js", "Tailwind CSS"],
     features: [
       { icon: FiShoppingCart, label: "Real-time Cart" },
@@ -187,9 +210,22 @@ export const PROJECTS = [
       "JWT authentication, protected routes & role-based access",
       "Complete checkout flow with live order status tracking",
     ],
-    images: [],
+    images: [
+      qeLandingPage,
+      qeLandingFeatures,
+      qeHomeMenu,
+      qeFoodList,
+      qeCart,
+      qeCheckout,
+      qeAdminPanel,
+    ],
     demo: "https://fooddeliveryapp-frontend-zn5z.onrender.com",
     code: "https://github.com/Bittu121/FoodDeliveryApp/tree/main/client",
+    architecture: {
+      flow: qeFlowDiagram,
+      er: qeErDiagram,
+      schema: qeSchemaDiagram,
+    },
   },
 ];
 

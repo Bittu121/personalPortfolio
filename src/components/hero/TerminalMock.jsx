@@ -98,9 +98,7 @@ const TerminalMock = () => {
                   <span className="text-content/40 inline-block w-[10ch]">
                     "role":
                   </span>
-                  <span className="text-emerald-300">
-                    "Full-Stack Developer"
-                  </span>
+                  <span className="text-emerald-300">"Software Developer"</span>
                   ,
                 </motion.p>
                 <motion.p
@@ -110,7 +108,10 @@ const TerminalMock = () => {
                   <span className="text-content/40 inline-block w-[10ch]">
                     "company":
                   </span>
-                  <span className="text-emerald-300">"Vserv Infosystems"</span>,
+                  <span className="text-emerald-300">
+                    "Vserv Infosystems Pvt. Ltd."
+                  </span>
+                  ,
                 </motion.p>
                 <motion.p
                   variants={lineItem}
@@ -120,7 +121,7 @@ const TerminalMock = () => {
                     "stack":
                   </span>
                   <span className="text-[#818cf8]">
-                    ["React", "Node.js", "MongoDB"]
+                    ["React", "Node.js", "MongoDB","Next.js"]
                   </span>
                   ,
                 </motion.p>
@@ -177,11 +178,11 @@ const TerminalMock = () => {
                     variants={lineItem}
                     className="whitespace-nowrap mt-1"
                   >
-                    <span
+                    {/* <span
                       className={`inline-block w-[6ch] text-[11px] font-bold ${color}`}
                     >
                       [{tag}]
-                    </span>
+                    </span> */}
                     <span className="text-content/70">{text}</span>
                   </motion.p>
                 ))}
@@ -190,8 +191,8 @@ const TerminalMock = () => {
           </AnimatePresence>
 
           <p className="mt-4 text-content/30 italic whitespace-nowrap">
-            <span className="text-[#818cf8]">{">"}</span> # 5+ projects · 7+
-            technologies · 1+ yr experience{" "}
+            <span className="text-[#818cf8]">{">"}</span> # 4+ projects · 7+
+            technologies · 2+ yr experience{" "}
             <span className="inline-block w-[7px] h-[13px] bg-content/30 align-middle animate-pulse" />
           </p>
         </div>
