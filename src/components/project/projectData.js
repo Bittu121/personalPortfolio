@@ -86,7 +86,7 @@ export const PROJECTS = [
       "Express.js",
       "MongoDB",
       "REST API",
-      "Redux Thunk"
+      "Redux Thunk",
     ],
     features: [
       { icon: FiShield, label: "Role Based Access" },
@@ -158,7 +158,7 @@ export const PROJECTS = [
       "Express.js",
       "MongoDB",
       "REST API",
-      "Redux.js"
+      "Redux.js",
     ],
     features: [
       { icon: FiClipboard, label: "Booking Requests" },
@@ -206,9 +206,14 @@ export const PROJECTS = [
       { icon: FiActivity, label: "Order Tracking" },
     ],
     bullets: [
-      "Real-time cart with session persistence & quantity controls",
-      "JWT authentication, protected routes & role-based access",
-      "Complete checkout flow with live order status tracking",
+      "Built a Swiggy-like Food Delivery Web Application with a responsive UI, REST API integration, and scalable MERN architecture.",
+      "Implemented secure user authentication using JWT and bcrypt.",
+      "Developed food browsing with search, category filtering, and shopping cart functionality.",
+      "Built order placement, order history, and order status tracking features.",
+      "Integrated Stripe payment gateway with payment verification for secure online payments.",
+      "Developed an Admin Panel to manage food items, customer orders, and delivery status.",
+      "Optimized application performance using lazy loading and Context API for state management.",
+      "Tech Stack: React.js, Node.js, Express.js, MongoDB, JWT, Stripe, Context API, Axios, REST APIs, Tailwind CSS.",
     ],
     images: [
       qeLandingPage,
