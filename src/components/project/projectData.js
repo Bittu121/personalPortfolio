@@ -196,8 +196,8 @@ export const PROJECTS = [
   {
     id: "03",
     badge: "Full-Stack",
-    title: "Q Eats — Food Delivery Platform",
-    desc: "A full-stack food delivery application QEats with a customer-facing client, an admin panel, and a Node.js/Express backend.",
+    title: "Q Eats — Food Delivery Web Application",
+    desc: "A full-stack food delivery Web Application, an admin panel, and a Node.js/Express backend.",
     tech: ["React", "Node.js", "MongoDB", "Express.js", "Tailwind CSS"],
     features: [
       { icon: FiShoppingCart, label: "Real-time Cart" },

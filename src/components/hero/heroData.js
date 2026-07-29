@@ -26,7 +26,7 @@ export const HERO_IMPACT_LOG = [
   { tag: "INFO", text: "loading impact.log ...", color: "text-white/35" },
   {
     tag: "OK",
-    text: "5+ full-stack projects completed",
+    text: "4+ full-stack projects completed",
     color: "text-emerald-400",
   },
   {
