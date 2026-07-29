@@ -100,11 +100,13 @@ const HeroSection = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-base md:text-lg leading-[1.75] text-content/50 max-w-lg mb-8 mx-auto md:mx-0"
             >
-              Building full-stack web applications with React, Next.js, Node.js, Express.js, and MongoDB.
+              Building web applications with React, Next.js, Node.js,
+              Express.js, and MongoDB.
               <br />
-              Focused on reusable UI components, REST APIs, authentication, and business applications.{" "}
+              Creating reusable UI components, integrating REST APIs, and
+              building business applications at{" "}
               <span className="text-[#a5b4fc] font-semibold underline decoration-[#818cf8]/40 underline-offset-2">
-                Vserv Infosystems Private Limited
+                Vserv Infosystems
               </span>
               .
             </motion.p>
