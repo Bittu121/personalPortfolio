@@ -8,33 +8,32 @@ const AboutBio = () => {
     <FadeIn delay={0.1} className="flex flex-col gap-5">
       <p className="text-base md:text-md text-content/55 leading-[1.75]">
         I'm a{" "}
-        <span className="text-content font-semibold">Software Developer</span>{" "}
-        at{" "}
+        <span className="text-content font-semibold">Software Engineer</span>{" "}
+        with over 2+ years of experience building web applications using{" "}
+        <span className="text-content font-semibold">
+          React.js, Next.js, Node.js, Express.js, and MongoDB
+        </span>
+        .
+      </p>
+
+      <p className="text-base md:text-md text-content/55 leading-[1.75]">
+        At{" "}
         <span className="text-content font-semibold">
           Vserv Infosystems Private Limited
         </span>
-        , where I build scalable, high-performance web applications with{" "}
-        <span className="text-content font-semibold">
-          MongoDB, Express.js, React, and Node.js
-        </span>
-        . I focus on clean REST APIs, secure authentication, and reliable
-        production-ready systems.
+        , I work on ERP and enterprise applications, building features that are
+        simple, reliable, and easy to maintain. I enjoy creating user-friendly
+        applications, integrating REST APIs, and solving real business problems
+        through software.
       </p>
 
       <p className="text-base md:text-md text-content/55 leading-[1.75]">
-        I've built real-world applications across dashboards, CRUD systems, and
-        food-delivery platforms — shipping reusable component architecture,
-        responsive frontends, and well-structured backend services along the
-        way.
-      </p>
-
-      <p className="text-base md:text-md text-content/55 leading-[1.75]">
-        Outside work I explore side projects, sharpen my DSA on LeetCode, and
-        stay current with the modern web ecosystem. I care about{" "}
+        I was honored to receive the{" "}
         <span className="text-content font-semibold">
-          code quality, system design, and products that genuinely work
-        </span>
-        .
+          KRA Performance Award
+        </span>{" "}
+        for my contributions. Every project gives me an opportunity to learn,
+        improve, and become a better engineer.
       </p>
 
       <AboutStats />
