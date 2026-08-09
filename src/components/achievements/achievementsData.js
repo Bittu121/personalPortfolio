@@ -1,42 +1,25 @@
 import {
-  FiAward,
   FiStar,
-  FiBookOpen,
   FiCpu,
   FiUsers,
-  FiClock,
 } from "react-icons/fi";
 
 export const ACHIEVEMENTS = [
   {
-    icon: FiAward,
-    title: "Meta Hackathon 2022 — Global Rank 368",
-    description: "Top 0.5% among all global participants",
-  },
-  {
     icon: FiStar,
-    title: "ENCODE Hackathon — Top 10",
-    description: "Top 10 among 650+ teams · IIT Guwahati",
+    title: "KRA Performance Award",
+    description: "Received the KRA Performance Award for outstanding performance and project contributions at Vserv Infosystems.",
   },
-  {
-    icon: FiBookOpen,
-    title: "Published Researcher — Springer (ICASI 2022)",
-    description: '"Eyes Say It All" — Deepfake detection, 90% accuracy',
-  },
+
   {
     icon: FiCpu,
-    title: "JEE Mains — 99.08 Percentile",
-    description: "Top 1% among 1.2M+ aspirants nationally",
+    title: "Category Rank 800 in BCECE 2017",
+    // description: "Top 1% among 1.2M+ aspirants nationally",
   },
   {
     icon: FiUsers,
-    title: "Head of Technical Team — Unnat Bharat Abhiyan",
+    title: "Techfest Hackathon Coordination",
     description:
-      "Led technical initiatives for rural development cell at NIT Delhi",
-  },
-  {
-    icon: FiClock,
-    title: "Captain — Table Tennis, NIT Delhi",
-    description: "Led the team in Inter-NIT competitions",
+      "Contributed to organizing a hackathon during the Gyanki Techfest at college.",
   },
 ];
