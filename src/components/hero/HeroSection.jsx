@@ -122,7 +122,7 @@ const HeroSection = () => {
                   View Projects <HiArrowRight size={17} />
                 </button>
               </Link>
-              <a href="/Resume.pdf" download>
+              <a href="/Bittu_Kumar_Resume.pdf" download="Bittu_Kumar_Resume.pdf">
                 <button className="px-4 py-3 rounded-md border border-content/10 hover:border-content/40 bg-card text-content font-semibold text-sm flex items-center gap-2 transition-all duration-300">
                   Download Resume <FiDownload size={16} />
                 </button>

@@ -138,7 +138,7 @@ export const PROJECTS = [
       amCategories,
       amAddCategory,
     ],
-    demo: "https://...",
+    demo: "https://asset-management-1-619b.onrender.com",
     code: "https://github.com/Bittu121/asset-management",
     architecture: {
       flow: amFlowDiagram,
@@ -185,7 +185,7 @@ export const PROJECTS = [
       tdUserManagement,
       tdETicketUpload,
     ],
-    demo: "https://...",
+    demo: "https://travel-desk-1.onrender.com",
     code: "https://github.com/Bittu121/Travel-Desk",
     architecture: {
       flow: tdFlowDiagram,

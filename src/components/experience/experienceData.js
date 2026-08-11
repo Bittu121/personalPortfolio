@@ -5,13 +5,13 @@ export const WORK_EXPERIENCE = [
     location: "India",
     duration: "Jan 2025 — Present",
     points: [
-      "Developed the SLA (Service Level Agreement) module using React.js, Node.js, MySQL, and REST APIs",
+      "Developed service level agreement module using React.js, Node.js, MySQL, and REST APIs",
       "Built SLA features including policy, SLA response and resolution time, business hours, holiday calendar, and escalation.",
       " Developed dashboards to monitor SLA performance and ticket status.",
       "Fixed bugs, optimized existing features, and improved application performance and user experience",
       "Developed ERP feature modules for Item Management, Inventory Management, Price List Management, and Mobile AppManagement.",
       "Implemented first-level approval notifications and developed role-based dashboards for Vendor, Purchaser, Finance.",
-      "Built reporting and export features with PDF generation, Excel import/export, and print support",
+      "Built reporting and export features with PDF generation, Excel import/export, and print support.",
     ],
     tech: [
       "React",
@@ -48,7 +48,7 @@ export const WORK_EXPERIENCE = [
     location: "Remote",
     duration: "Jan 2024 — Apr 2024",
     points: [
-      "Worked on frontend modules for a finance dashboard using ReactJS with REST API integration.",
+      "Worked on 2+ frontend modules for a finance dashboard using ReactJS with REST API integration.",
     ],
     tech: ["React", "JavaScript", "HTML5", "CSS3", "REST APIs"],
   },
@@ -58,7 +58,7 @@ export const WORK_EXPERIENCE = [
     location: "Remote",
     duration: "Jul 2022 — Apr 2023",
     points: [
-      "Worked on frontend modules for live market data, stock search, buy and sell, order book, trade book, and portfolio.",
+      "Built frontend modules for live market data, stock search, buy and sell, order book, trade book, and portfolio.",
     ],
     tech: ["C++", "JavaScript", "HTML5", "CSS3", "Git"],
   },
