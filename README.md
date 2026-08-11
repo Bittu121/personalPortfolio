@@ -1,55 +1,34 @@
 <div align="center">
 
-<img src="./readme-image/hero-section.png" alt="Bittu Kumar — Personal Portfolio" width="880"/>
-
-<br/>
 <br/>
 
 # Bittu Kumar
 
-**Full-Stack Developer · MERN · React**
+**Full-Stack Developer**
 
-A portfolio built around shipped work — full-stack systems in production,
-documented down to their flow, ER, and schema diagrams.
+Building production systems with React, Node.js, and MongoDB.
 
 <br/>
 
-[**View Live →**](https://personalportfolio-web-app.onrender.com/) &nbsp;·&nbsp;
+[**View Live**](https://personalportfolio-web-app.onrender.com/) &nbsp;·&nbsp;
 [Resume](./public/Bittu_Kumar_Resume.pdf) &nbsp;·&nbsp;
 [LinkedIn](https://www.linkedin.com/in/bittu-kumar143/) &nbsp;·&nbsp;
 [GitHub](https://github.com/Bittu121)
 
 <br/>
 
+<img src="./readme-image/hero-section.png" alt="Portfolio hero section" width="880"/>
+
+<br/>
+<br/>
+
 </div>
-
-## Overview
-
-Less a résumé page, more a case-study site. Each project ships with real screenshots, a feature breakdown, and its architecture — flow diagram, ER diagram, and database schema — shown in-page rather than linked away.
-
-Built with React 18 and Tailwind, animated with Framer Motion. Every section's copy lives in its own `*Data.js` file, so content stays separate from presentation.
-
-<br/>
-
-## Highlights
-
-**⌘K Command Palette** — keyboard-driven navigation with arrow-key traversal.
-
-**Terminal Hero** — an animated terminal rendering a `git log` and a live `impact.log`.
-
-**Architecture Modals** — Flow, ER, and Schema diagrams for every project, in a tabbed viewer.
-
-**Project Carousel** — full screenshot walkthroughs, up to 13 screens per project.
-
-**Motion & Polish** — scroll reveals, loading state, scroll-to-top, smooth scroll-spy nav.
-
-<br/>
 
 ## Featured Projects
 
 ### Asset Management System
 
-Complete IT asset lifecycle platform — QR tagging, allocation, gate passes, and reporting. Role-based access across Admin, Manager, Technician, and User, with JWT + refresh tokens, OTP password reset, Excel import/export, and full audit trails.
+IT asset lifecycle platform — QR tagging, allocation, gate passes, and reporting. Role-based access across Admin, Manager, Technician, and User, with JWT authentication, OTP password reset, Excel import/export, and audit trails.
 
 <sub>Next.js · TypeScript · Node.js · Express · MongoDB · Redux Thunk · Tailwind</sub>
 
@@ -59,7 +38,7 @@ Complete IT asset lifecycle platform — QR tagging, allocation, gate passes, an
 
 ### Travel Desk Management System
 
-One platform for employees, managers, HR, vendors, finance, and admins. Two-step approval workflow with automated email hand-offs (manager → HR → vendor), vendor ticket uploads, payment tracking, and one-click Excel export.
+Travel request platform for employees, managers, HR, vendors, finance, and admins. Two-step approval workflow with automated email hand-offs, vendor ticket uploads, payment tracking, and Excel export.
 
 <sub>React · Node.js · Express · MongoDB · Redux · Tailwind</sub>
 
@@ -69,7 +48,7 @@ One platform for employees, managers, HR, vendors, finance, and admins. Two-step
 
 ### Q Eats — Food Delivery Platform
 
-A Swiggy-style delivery app with real-time cart, category filtering, order tracking, Stripe payments with verification, and a separate admin panel for menu and order management.
+Food delivery application with cart, category filtering, order tracking, Stripe payments with verification, and an admin panel for menu and order management.
 
 <sub>React · Node.js · Express · MongoDB · Stripe · Tailwind</sub>
 
@@ -77,11 +56,33 @@ A Swiggy-style delivery app with real-time cart, category filtering, order track
 
 <br/>
 
+## About This Site
+
+Each project is presented as a case study — screenshots, feature breakdown, and architecture diagrams (flow, ER, and schema) shown in-page rather than linked away.
+
+**⌘K Command Palette** — keyboard-driven navigation with arrow-key traversal.
+
+**Terminal Hero** — an animated terminal rendering a `git log` and an `impact.log`.
+
+**Architecture Modals** — flow, ER, and schema diagrams in a tabbed viewer.
+
+**Project Carousel** — screenshot walkthroughs for each project.
+
+<br/>
+
+<div align="center">
+
+<img src="./readme-image/about-section.png" alt="About section" width="880"/>
+
+</div>
+
+<br/>
+
 ## Tech Stack
 
-**Frontend & Web** — React · Next.js · Tailwind CSS · JavaScript · HTML5 · CSS3 · Redux
+**Frontend** — React · Next.js · Tailwind CSS · JavaScript · HTML5 · CSS3 · Redux
 
-**Backend & APIs** — Node.js · Express.js · REST APIs · JWT Auth · Zod · Middleware
+**Backend** — Node.js · Express.js · REST APIs · JWT Auth · Zod · Middleware
 
 **Languages & CS** — C++ · JavaScript · OOPs · DSA · System Design · DBMS
 
@@ -89,19 +90,7 @@ A Swiggy-style delivery app with real-time cart, category filtering, order track
 
 <br/>
 
-## Preview
-
-<div align="center">
-
-<img src="./readme-image/about-section.png" alt="About section" width="880"/>
-
-<sub>The About section — profile card, bio, and stat grid.</sub>
-
-</div>
-
-<br/>
-
-## Getting Started
+## Running Locally
 
 Requires Node.js 16+ and npm.
 
@@ -112,7 +101,7 @@ npm install
 npm run dev
 ```
 
-The dev server runs at `http://localhost:3000`. Use `npm run build` for a production build in `build/`.
+Runs at `http://localhost:3000`. Use `npm run build` for a production build.
 
 <br/>
 
@@ -122,7 +111,7 @@ The dev server runs at `http://localhost:3000`. Use `npm run build` for a produc
 src/
 ├── components/
 │   ├── navbar/        Navbar + ⌘K CommandPalette
-│   ├── hero/          HeroSection + animated TerminalMock
+│   ├── hero/          HeroSection + TerminalMock
 │   ├── about/         ProfileCard · AboutBio · AboutStats
 │   ├── skill/         Grouped skill cards
 │   ├── project/       Showcase · Carousel · Features & Architecture modals
@@ -154,17 +143,15 @@ B.Tech, Computer Science & Engineering — Darbhanga College of Engineering · C
 
 ## Recognition
 
-**KRA Performance Award** — for outstanding performance and project contributions at VServ Infosystems
+**KRA Performance Award** — for performance and project contributions at VServ Infosystems
 
 **Category Rank 800** — BCECE 2017
 
-**Techfest Hackathon Coordination** — Gyanki Techfest, college
+**Techfest Hackathon Coordination** — Gyanki Techfest
 
 <br/>
 
 <div align="center">
-
-## Get in Touch
 
 Open to **SDE · Frontend · Full-Stack** roles.
 
@@ -173,6 +160,6 @@ Open to **SDE · Frontend · Full-Stack** roles.
 
 <br/>
 
-<sub>Designed and built by Bittu Kumar · React · Tailwind CSS · Framer Motion</sub>
+<sub>Built with React, Tailwind CSS, and Framer Motion.</sub>
 
 </div>
