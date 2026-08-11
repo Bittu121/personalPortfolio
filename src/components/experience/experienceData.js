@@ -2,7 +2,7 @@ export const WORK_EXPERIENCE = [
   {
     role: "Software Developer",
     org: "VServ Infosystems Pvt. Ltd.",
-    location: "India",
+    location: "On-site",
     duration: "Jan 2025 — Present",
     points: [
       "Developed service level agreement module using React.js, Node.js, MySQL, and REST APIs",
@@ -28,7 +28,7 @@ export const WORK_EXPERIENCE = [
   {
     role: "MERN Stack Intern",
     org: "Applore Technologies",
-    location: "Remote",
+    location: "On-site",
     duration: "May 2024 — Nov 2024",
     points: [
       "Worked frontend features and REST API for Pondriee and Pet Republic admin dashboards, resolving 30+ UI issues.",
@@ -45,7 +45,7 @@ export const WORK_EXPERIENCE = [
   {
     role: "Frontend Developer Intern",
     org: "Can Technologies",
-    location: "Remote",
+    location: "Hybrid",
     duration: "Jan 2024 — Apr 2024",
     points: [
       "Worked on 2+ frontend modules for a finance dashboard using ReactJS with REST API integration.",
@@ -55,7 +55,7 @@ export const WORK_EXPERIENCE = [
   {
     role: "Software Engineer",
     org: "Share India Securities Ltd.",
-    location: "Remote",
+    location: "On-site",
     duration: "Jul 2022 — Apr 2023",
     points: [
       "Built frontend modules for live market data, stock search, buy and sell, order book, trade book, and portfolio.",
