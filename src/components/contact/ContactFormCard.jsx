@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import FadeIn from "../FadeIn";
 import { CONTACT_FORM_URL } from "./contactData";
+import { FiSend } from "react-icons/fi";
 
 const ContactFormCard = () => {
   const [formData, setFormData] = useState({ name: "", message: "" });
@@ -37,13 +38,13 @@ const ContactFormCard = () => {
       className="bg-card border border-content/[0.07] rounded-2xl p-6 md:p-9 h-full w-full max-w-xl mx-auto flex flex-col justify-center transition-all duration-300 hover:border-content/20"
     >
       <h3 className="text-[22px] font-bold text-content tracking-[-0.03em] mb-6 leading-none">
-        Tell me about your opportunity
+        Contact Us
       </h3>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <label className="block text-[11px] font-bold tracking-[0.1em] uppercase text-content/40 mb-2">
-            Name
+            Email
           </label>
           <input
             type="text"
@@ -66,7 +67,7 @@ const ContactFormCard = () => {
             value={formData.message}
             onChange={handleChange}
             rows={4}
-            placeholder="Role, company, expectations..."
+            placeholder="Please share the role, company, location, and any relevant details."
             className="w-full rounded-xl bg-content/[0.03] border border-content/[0.07] px-5 py-4 text-content text-base outline-none resize-none transition-all duration-300 focus:border-[#818cf8]/30"
           />
         </div>
@@ -76,10 +77,16 @@ const ContactFormCard = () => {
           disabled={loading}
           className="h-[54px] rounded-xl bg-invert text-invert-fg font-semibold text-base transition-all duration-300 hover:scale-[1.01] disabled:opacity-60 flex items-center justify-center gap-2"
         >
-          {loading && (
-            <span className="w-4 h-4 rounded-full border-2 border-invert-fg/30 border-t-invert-fg animate-spin" />
+          {loading ? (
+            <>
+              <span className="w-4 h-4 rounded-full border-2 border-invert-fg/30 border-t-invert-fg animate-spin" />
+              Sending...
+            </>
+          ) : (
+            <>
+              <FiSend size={17} strokeWidth={2} className="shrink-0" />Send Opportunity
+            </>
           )}
-          {loading ? "Sending..." : "Send Opportunity →"}
         </button>
       </form>
     </FadeIn>
